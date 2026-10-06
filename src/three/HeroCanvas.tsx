@@ -256,6 +256,26 @@ export const HeroCanvas: React.FC<HeroCanvasProps> = ({
       isDraggingRef.current = false;
     };
 
+    const onTouchStart = (e: TouchEvent) => {
+      if (e.touches.length === 1) {
+        isDraggingRef.current = true;
+        previousMouseXRef.current = e.touches[0].clientX;
+      }
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      if (isDraggingRef.current && e.touches.length === 1) {
+        const deltaX = e.touches[0].clientX - previousMouseXRef.current;
+        manualDragOffsetRef.current += deltaX * 0.012;
+        targetRotationYRef.current += deltaX * 0.012;
+        previousMouseXRef.current = e.touches[0].clientX;
+      }
+    };
+
+    const onTouchEnd = () => {
+      isDraggingRef.current = false;
+    };
+
     const handleResize = () => {
       if (!container) return;
       const w = container.clientWidth;
@@ -269,13 +289,16 @@ export const HeroCanvas: React.FC<HeroCanvasProps> = ({
     container.addEventListener('mousemove', onMouseMove);
     container.addEventListener('mousedown', onMouseDown);
     window.addEventListener('mouseup', onMouseUp);
+    container.addEventListener('touchstart', onTouchStart, { passive: true });
+    container.addEventListener('touchmove', onTouchMove, { passive: true });
+    window.addEventListener('touchend', onTouchEnd);
 
     // --- Animation & Render Loop ---
     let animationFrameId: number;
-    let clock = new THREE.Clock();
+    const startTime = performance.now();
 
     const animate = () => {
-      const elapsedTime = clock.getElapsedTime();
+      const elapsedTime = (performance.now() - startTime) * 0.001;
 
       // Smooth interpolation for rotation (zero jitter, cinematic spring lerp)
       currentRotationYRef.current += (targetRotationYRef.current - currentRotationYRef.current) * 0.085;
@@ -336,6 +359,9 @@ export const HeroCanvas: React.FC<HeroCanvasProps> = ({
       container.removeEventListener('mousemove', onMouseMove);
       container.removeEventListener('mousedown', onMouseDown);
       window.removeEventListener('mouseup', onMouseUp);
+      container.removeEventListener('touchstart', onTouchStart);
+      container.removeEventListener('touchmove', onTouchMove);
+      window.removeEventListener('touchend', onTouchEnd);
 
       // Clean up Three.js resources
       renderer.dispose();
@@ -352,7 +378,7 @@ export const HeroCanvas: React.FC<HeroCanvasProps> = ({
   return (
     <div
       ref={mountRef}
-      className="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none"
+      className="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none touch-pan-y"
       data-cursor="ROTATE 360°"
     >
       {/* Fallback if WebGL disabled */}

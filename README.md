@@ -1,7 +1,7 @@
 # Premium 360° Portfolio — Mohit Madhukar Rathod
 
 > **Student Developer | Full-Stack Developer in Progress | Technology Enthusiast**  
-> **GH Raisoni College, Wagholi, Pune**  
+> **G.H. Raisoni College of Engineering and Management, Wagholi, Pune**  
 > **Academic Merit: 92.12% — MHT-CET 2026**  
 > **Philosophy:** *Learn → Build → Experiment → Improve → Create*  
 > **Tagline:** *Learning today. Building tomorrow.*

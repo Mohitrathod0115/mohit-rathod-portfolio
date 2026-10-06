@@ -42,16 +42,16 @@ export const PORTFOLIO_DATA = {
     fullName: "Mohit Madhukar Rathod",
     role: "Student Developer & Technology Enthusiast",
     status: "First Year Student",
-    college: "GH Raisoni College, Wagholi, Pune",
+    college: "G.H. Raisoni College of Engineering and Management, Wagholi, Pune",
     academicAchievement: "92.12% — MHT-CET 2026",
     tagline: "Learning today. Building tomorrow.",
     supportingTagline: "Learning. Building. Experimenting. Creating with Technology.",
     secondaryTagline: "Curious today. Capable tomorrow.",
     philosophy: "Learn → Build → Experiment → Improve → Create",
     summary:
-      "I'm Mohit Madhukar Rathod, a first-year student at GH Raisoni College, Wagholi, Pune, passionate about programming, web development, databases and emerging technologies.",
+      "I'm Mohit Madhukar Rathod, a first-year student at G.H. Raisoni College of Engineering and Management, Wagholi, Pune, passionate about programming, web development, databases and emerging technologies.",
     aboutParagraphs: [
-      "My name is Mohit Madhukar Rathod. I am a first-year student at GH Raisoni College, Wagholi, Pune. I am passionate about programming, web development, databases and emerging technologies.",
+      "My name is Mohit Madhukar Rathod. I am a first-year student at G.H. Raisoni College of Engineering and Management, Wagholi, Pune. I am passionate about programming, web development, databases and emerging technologies.",
       "I enjoy learning how technology works and turning ideas into practical digital experiences. My current technical journey includes HTML, CSS, JavaScript, Python, C++, Java, React, Node.js, Supabase and PostgreSQL.",
       "I am continuously learning new languages, frameworks and technologies with the goal of becoming a strong full-stack developer and eventually building impactful technology products."
     ],
@@ -61,7 +61,7 @@ export const PORTFOLIO_DATA = {
   academic: {
     score: "92.12%",
     exam: "MHT-CET 2026",
-    college: "GH Raisoni College, Wagholi, Pune",
+    college: "G.H. Raisoni College of Engineering and Management, Wagholi, Pune",
     year: "First Year Student",
     verified: true
   },
@@ -221,9 +221,9 @@ export const PORTFOLIO_DATA = {
     {
       period: "2026",
       title: "Started College Journey",
-      institution: "GH Raisoni College, Wagholi, Pune",
+      institution: "G.H. Raisoni College of Engineering and Management, Wagholi, Pune",
       description: "Commenced formal engineering education as a first-year student, embarking on a deep exploration of computer science.",
-      tags: ["GH Raisoni College", "Pune", "Engineering"],
+      tags: ["G.H. Raisoni College of Engineering and Management", "Pune", "Engineering"],
       highlight: "First Year Student"
     },
     {
@@ -251,16 +251,16 @@ export const PORTFOLIO_DATA = {
 
   projects: [
     {
-      id: "traceai",
-      name: "TRACEAI",
-      subtitle: "Explainable Email Threat Detection & Forensic Intelligence",
-      category: "Cybersecurity / AI / Web Application",
-      description: "TRACEAI is a platform designed to analyze suspicious emails, identify phishing, spoofing and impersonation indicators, calculate explainable risk and provide forensic intelligence.",
-      problem: "Traditional anti-phishing gateways function as opaque black boxes—flagging or quarantining messages without providing clear explanations, actionable forensic evidence, or user education.",
-      solution: "An interactive, transparent forensic dashboard that inspects email headers, SPF/DKIM/DMARC authentication parameters, structural anomalies, and semantic indicators to provide an explainable risk breakdown.",
-      contribution: "Designed the architecture and responsive dashboard UI, structured detection heuristics, and developed clear data visualizations for threat severity and explainability metrics.",
-      technologies: ["React", "Python", "FastAPI", "Database", "AI-assisted analysis"],
-      linkText: "VIEW PROJECT →"
+      id: "algovortex",
+      name: "ALGOVORTEX",
+      subtitle: "Interactive Algorithmic Complexity & Graph Topology Engine",
+      category: "Full-Stack / Data Structures / WebGL",
+      description: "A high-performance interactive algorithmic workbench and visual simulation sandbox. Simulates real-time graph traversals (Dijkstra, A*, BFS, DFS), memory call stacks, and asymptotic Big-O execution curves, bridging foundational C++ algorithms with modern interactive web architecture.",
+      problem: "Theoretical computer science algorithms often feel abstract and detached from practical execution, making it difficult to understand runtime bottlenecks, recursion stacks, and edge-case graph topologies.",
+      solution: "Engineered a reactive canvas workbench featuring customizable node topologies, step-by-step traversal animations, real-time cycle detection, and live algorithmic execution telemetry.",
+      contribution: "Architected the interactive graph simulation engine, wrote traversal algorithm state machines, and designed the responsive Figma-inspired dark telemetry dashboard.",
+      technologies: ["React", "TypeScript", "Node.js", "Canvas / WebGL", "Tailwind CSS", "PostgreSQL"],
+      linkText: "EXPLORE ALGOVORTEX →"
     },
     {
       id: "project-02",
@@ -404,11 +404,21 @@ export const PORTFOLIO_DATA = {
     }
   ],
 
+  contact: {
+    phone: "+91 7219600115",
+    phoneRaw: "7219600115",
+    email: "Mohitrathod9600@gmail.com",
+    whatsapp: "https://wa.me/917219600115",
+    location: "Pune, Maharashtra, India"
+  },
+
   socialLinks: [
+    { name: "Email", label: "Mohitrathod9600@gmail.com", url: "mailto:Mohitrathod9600@gmail.com", placeholder: false },
+    { name: "Phone", label: "+91 7219600115", url: "tel:+917219600115", placeholder: false },
+    { name: "WhatsApp", label: "+91 7219600115", url: "https://wa.me/917219600115", placeholder: false },
     { name: "GitHub", label: "ADD LINK", url: "https://github.com", placeholder: true },
     { name: "LinkedIn", label: "ADD LINK", url: "https://linkedin.com", placeholder: true },
-    { name: "Instagram", label: "ADD LINK", url: "https://instagram.com", placeholder: true },
-    { name: "Email", label: "ADD EMAIL", url: "mailto:mohit@example.com", placeholder: true }
+    { name: "Instagram", label: "@rathodmohit_0115", url: "https://www.instagram.com/rathodmohit_0115/?utm_source=ig_web_button_share_sheet", placeholder: false }
   ],
 
   marquees: {
@@ -416,4 +426,3 @@ export const PORTFOLIO_DATA = {
     secondary: "FULL-STACK DEVELOPMENT • CREATIVE WEB • PROGRAMMING • DATABASES • AI • TECHNOLOGY • "
   }
 };
-

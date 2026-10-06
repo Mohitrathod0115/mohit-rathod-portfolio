@@ -3,6 +3,7 @@ import { CustomCursor } from './components/CustomCursor';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Marquee } from './components/Marquee';
+import { FloatingMobileBar } from './components/FloatingMobileBar';
 
 import { HeroSection } from './sections/HeroSection';
 import { AboutSection } from './sections/AboutSection';
@@ -87,6 +88,9 @@ export function App() {
         {/* 14 / Cinematic Final CTA */}
         <CtaSection />
       </main>
+
+      {/* Floating mobile quick contact bar */}
+      <FloatingMobileBar />
 
       {/* Minimal Editorial Footer */}
       <Footer />

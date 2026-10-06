@@ -12,13 +12,13 @@ export function useLenis() {
     if (prefersReducedMotion) return;
 
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 0.88,
+      touchMultiplier: 1.1,
     });
 
     lenis.on('scroll', ScrollTrigger.update);
@@ -30,10 +30,16 @@ export function useLenis() {
     gsap.ticker.add(tickerCallback);
     gsap.ticker.lagSmoothing(0);
 
+    // Refresh ScrollTrigger when layout stabilizes
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener('resize', handleResize);
+
     return () => {
+      window.removeEventListener('resize', handleResize);
       gsap.ticker.remove(tickerCallback);
       lenis.destroy();
     };
   }, []);
 }
-

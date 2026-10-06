@@ -94,9 +94,10 @@ export const SkillsSection: React.FC = () => {
                     {catSkills.map((skill) => (
                       <div
                         key={skill.name}
+                        onClick={() => setActiveSkill(activeSkill?.name === skill.name ? null : skill)}
                         onMouseEnter={() => setActiveSkill(skill)}
                         onMouseLeave={() => setActiveSkill(null)}
-                        className={`group relative px-4 py-2 rounded-sm border cursor-pointer transition-all duration-200 select-none ${
+                        className={`group relative px-3.5 sm:px-4 py-2 rounded-sm border cursor-pointer transition-all duration-200 select-none ${
                           activeSkill?.name === skill.name
                             ? 'bg-cyan-500/15 border-cyan-400 text-white shadow-lg shadow-cyan-500/10'
                             : 'bg-white/[0.02] border-white/10 text-neutral-300 hover:border-white/30 hover:text-white'
